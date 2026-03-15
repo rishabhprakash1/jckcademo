@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Enablement - JCKCA Demo</title>
+    <title>AI Enablement - JC Kabra & Associates</title>
+    <meta name="description" content="JCKCA helps enterprises harness Agentic AI, LLMs, and machine learning to automate workflows, improve decisions, and drive measurable ROI.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .process-step {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 28px 30px;
+            background: var(--bg-glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            margin-bottom: 16px;
+            transition: all var(--transition-normal);
+        }
+        .process-step:hover {
+            border-color: var(--accent-purple);
+            background: rgba(139, 92, 246, 0.02);
+        }
+        .process-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1;
+            min-width: 55px;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.85;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            transition: all var(--transition-normal);
+        }
+        .stat-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-purple);
+        }
+        .stat-card .stat-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +63,6 @@
                 <i class="fa-solid fa-building-shield" style="color: var(--accent-cyan)"></i>
                 <span>JC Kabra & Associates</span>
             </a>
-            
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Digital%20Forensics.html">Digital Forensics</a></li>
@@ -23,57 +71,409 @@
                 <li><a href="Why%20Us.html">Why Us</a></li>
                 <li><a href="Contact%20us.html">Contact Us</a></li>
             </ul>
-            
             <a href="Contact%20us.html" class="btn btn-primary">Book a Consultation</a>
         </div>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 60vh; padding: 150px 0 50px;">
-            <div class="container hero-grid" style="grid-template-columns: 1fr; text-align: center;">
-                <div class="hero-content">
-                    <span class="badge">Next Generation Integration</span>
-                    <h1>AI <span class="text-gradient">Enablement</span></h1>
-                    <p style="margin: 0 auto 40px;">Harness the power of AI to supercharge your business. Deploy autonomous agents, advanced machine learning pipelines, and predictive analytics.</p>
+        <!-- Hero -->
+        <section class="hero" style="min-height: 70vh; padding: 160px 0 80px; text-align: center;">
+            <div class="container" style="max-width: 860px;">
+                <span class="badge" style="background: rgba(139,92,246,0.1); color: var(--accent-purple); border-color: rgba(139,92,246,0.2);">AI Strategy & Implementation</span>
+                <h1 style="font-size: 60px; margin-top: 16px; margin-bottom: 24px;">
+                    Your Business,<br>
+                    <span class="text-gradient-alt">Supercharged by AI.</span>
+                </h1>
+                <p style="font-size: 19px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 20px;">
+                    JCKCA helps forward-thinking enterprises unlock the full potential of Artificial Intelligence — from intelligent automation and Agentic AI agents to predictive analytics and custom LLM deployments.
+                </p>
+                <p style="font-size: 16px; color: var(--text-secondary); max-width: 680px; margin: 0 auto 40px;">
+                    We bridge the gap between AI's transformative potential and your real-world operational challenges — ethically, securely, and measurably.
+                </p>
+                <div class="hero-btns" style="justify-content: center;">
+                    <a href="Contact%20us.html" class="btn btn-primary"><i class="fa-solid fa-rocket" style="margin-right: 8px;"></i>Start Your AI Journey</a>
+                    <a href="#services" class="btn btn-outline">Explore AI Services</a>
                 </div>
             </div>
         </section>
 
-        <section class="section-padding" style="background: var(--bg-secondary)">
+        <!-- Is Your Business Leaving Value on the Table? -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
             <div class="container">
-                <div class="grid-2">
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-robot" style="font-size: 24px; color: var(--accent-cyan); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Agentic AI Systems</h3>
-                            <p style="font-size: 14px;">Automate end-to-end workflows with self-governing AI agents that reason, plan, and execute tasks autonomously while keeping humans in the loop.</p>
+                <div class="section-header">
+                    <h2>Is Your Business Leaving Value on the Table?</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="feature-card" style="border-top: 3px solid var(--accent-cyan);">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <h3 style="font-size: 20px;">Hours Lost to Manual Processes</h3>
+                        <p style="font-size: 14px;">Your teams are buried in repetitive tasks — data entry, report generation, email triage, compliance checks. AI can automate 70%+ of these workflows, freeing your people for strategic work.</p>
+                    </div>
+                    <div class="feature-card" style="border-top: 3px solid var(--accent-purple);">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3 style="font-size: 20px;">Decisions Made Without Data Intelligence</h3>
+                        <p style="font-size: 14px;">Most enterprises sit on goldmines of untapped data. Without the right AI models, these insights remain hidden — while competitors gain an edge through predictive analytics and real-time dashboards.</p>
+                    </div>
+                    <div class="feature-card" style="border-top: 3px solid var(--accent-pink);">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-gauge-high"></i></div>
+                        <h3 style="font-size: 20px;">Growth Capped by Operational Bottlenecks</h3>
+                        <p style="font-size: 14px;">Scaling a business shouldn't mean scaling your headcount linearly. AI-driven operations let you grow revenue and client base without proportionally growing costs — unlocking true operational leverage.</p>
+                    </div>
+                </div>
+                <div class="glass-panel" style="margin-top: 40px; padding: 30px 40px; text-align: center; border-color: rgba(139,92,246,0.25);">
+                    <p style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin: 0;">JCKCA's AI Enablement practice helps you identify, implement, and maximise these AI opportunities — fast, securely, and with measurable outcomes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Mean by AI Enablement -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="grid-2" style="gap: 60px; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 38px; margin-bottom: 24px;">What We Mean by <span class="text-gradient-alt">AI Enablement</span></h2>
+                        <p style="color: var(--text-secondary); font-size: 17px; margin-bottom: 20px;">
+                            AI Enablement is not just about deploying a chatbot or buying a SaaS tool. It is the holistic process of making your organisation AI-ready — from your data infrastructure and team capabilities to your workflows and governance frameworks.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 17px; margin-bottom: 30px;">
+                            JCKCA acts as your dedicated AI partner — we assess your current state, design a custom AI roadmap, implement solutions tailored to your industry, and ensure sustainable adoption across your teams.
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px;">
+                            <div style="display: flex; align-items: center; gap: 12px; font-size: 16px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple); font-size: 18px;"></i> AI Readiness Assessment & Roadmap</div>
+                            <div style="display: flex; align-items: center; gap: 12px; font-size: 16px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple); font-size: 18px;"></i> Custom AI Agent & LLM Development</div>
+                            <div style="display: flex; align-items: center; gap: 12px; font-size: 16px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple); font-size: 18px;"></i> Workflow Automation & RPA Integration</div>
+                            <div style="display: flex; align-items: center; gap: 12px; font-size: 16px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple); font-size: 18px;"></i> AI Governance, Ethics & Compliance</div>
                         </div>
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-brain" style="font-size: 24px; color: var(--accent-purple); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">LLMs & Generative AI</h3>
-                            <p style="font-size: 14px;">Custom fine-tuned large language models tailored directly to your enterprise context, enabling internal document search and content generation.</p>
+                        <a href="Contact%20us.html" class="btn btn-primary">Book an AI Strategy Consultation</a>
+                    </div>
+                    <div class="glass-panel" style="padding: 0; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1677442135968-6d89469c5f97?q=80&w=2732&auto=format&fit=crop" alt="AI Technology" style="width: 100%; border-radius: 16px; display: block;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our AI Enablement Services -->
+        <section id="services" class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our AI Enablement Services</h2>
+                    <p>End-to-end AI capabilities to transform your enterprise operations.</p>
+                </div>
+                <div class="grid-3" style="gap: 24px;">
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-robot"></i></div>
+                        <h3 style="font-size: 19px;">Agentic AI & Autonomous Systems</h3>
+                        <p style="font-size: 14px;">Build autonomous AI agents that reason, plan, and execute multi-step tasks — from research and document processing to customer service and compliance monitoring.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-purple); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-comments"></i></div>
+                        <h3 style="font-size: 19px;">Custom LLM & Chatbot Development</h3>
+                        <p style="font-size: 14px;">Deploy fine-tuned large language models (LLMs) trained on your proprietary data — powering intelligent document search, internal Q&A systems, and client-facing assistants.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-cyan); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-gears"></i></div>
+                        <h3 style="font-size: 19px;">Workflow Automation & RPA</h3>
+                        <p style="font-size: 14px;">Automate repetitive business processes — invoice processing, data entry, reporting cycles, and compliance checks — saving hundreds of hours monthly across your teams.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-pink); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 style="font-size: 19px;">Predictive Analytics & BI</h3>
+                        <p style="font-size: 14px;">Transform raw data into forward-looking intelligence. We build predictive models and interactive dashboards that let executives make faster, data-driven decisions.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-cyan); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-database"></i></div>
+                        <h3 style="font-size: 19px;">Data Engineering & AI Pipelines</h3>
+                        <p style="font-size: 14px;">Build scalable data infrastructure — ingestion, transformation, and storage pipelines — that power your AI models with clean, structured, and real-time data.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-purple); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3 style="font-size: 19px;">AI Training & Upskilling</h3>
+                        <p style="font-size: 14px;">Equip your teams with practical AI skills through customised training programmes — from AI literacy workshops for leadership to technical bootcamps for your engineering teams.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-pink); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-eye"></i></div>
+                        <h3 style="font-size: 19px;">AI Monitoring & Governance</h3>
+                        <p style="font-size: 14px;">Establish responsible AI frameworks with model monitoring, bias detection, explainability protocols, and compliance reporting — ensuring ethical and auditable AI deployments.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-cyan); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3 style="font-size: 19px;">Generative AI for Content & Ops</h3>
+                        <p style="font-size: 14px;">Use GenAI to accelerate content creation, draft legal documents, generate regulatory submissions, and power internal knowledge management systems at scale.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-purple); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-shield-virus"></i></div>
+                        <h3 style="font-size: 19px;">AI-Powered Cyber Threat Detection</h3>
+                        <p style="font-size: 14px;">Deploy AI models that continuously monitor your environment for anomalies, threats, and policy violations — with real-time alerting and automated response playbooks.</p>
+                        <a href="Contact%20us.html" style="color: var(--accent-pink); font-weight: 600; font-size: 13px; display: inline-block; margin-top: 14px;">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our AI Enablement Process -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="grid-2" style="gap: 60px; align-items: start;">
+                    <div>
+                        <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                            <h2>Our AI Enablement Process</h2>
+                            <p style="text-align: left;">A strategic, phased approach to making AI work for your business — not the other way around.</p>
                         </div>
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-chart-line" style="font-size: 24px; color: var(--accent-pink); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Predictive Analytics</h3>
-                            <p style="font-size: 14px;">Forecast market trends, supply chain disruptions, and customer behaviors through deeply integrated corporate intelligence models.</p>
+                        <div class="process-step">
+                            <div class="process-num">01</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">AI Readiness Assessment</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We evaluate your current technology stack, data maturity, workflows, and team capabilities to identify where AI will deliver the highest ROI — and where to start.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-num">02</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Strategy & Roadmapping</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We co-create a prioritised AI roadmap with clear use cases, timelines, success metrics, and a governance framework aligned to your compliance requirements.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-num">03</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Pilot Development & Validation</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We build targeted AI pilots on high-impact use cases, validate results against measurable KPIs, and iterate rapidly before scaling across the organisation.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-num">04</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Deployment & Support</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">Full production deployment of AI systems with team training, change management, ongoing model monitoring, and performance optimisation to ensure lasting impact.</p>
+                            </div>
                         </div>
                     </div>
+                    <div style="position: sticky; top: 100px;">
+                        <div class="glass-panel" style="border-color: rgba(139,92,246,0.25); padding: 40px;">
+                            <div style="font-size: 48px; margin-bottom: 20px; color: var(--accent-purple);"><i class="fa-solid fa-brain"></i></div>
+                            <h3 style="font-size: 26px; margin-bottom: 16px;">Why Start Now?</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 24px;">The gap between AI-enabled and AI-lagging organisations is widening every quarter. Early movers capture market share, cut costs, and build defensible advantages.</p>
+                            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple);"></i> Industry-specific AI solutions</div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple);"></i> Compliance & security-first approach</div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple);"></i> Measurable ROI from Day 1</div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-purple);"></i> Fully managed or advisory models</div>
+                            </div>
+                            <a href="Contact%20us.html" class="btn btn-primary" style="display: block; text-align: center; background: var(--gradient-secondary);">Start an AI Strategy Session</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="glass-panel" style="display: flex; flex-direction: column; justify-content: center;">
-                        <h2 style="font-size: 32px; margin-bottom: 20px;">Drive the <span class="text-gradient-alt">Future</span></h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 20px;">Transition from legacy operations to an AI-native infrastructure. Our team handles data sanitation, model training, security fine-tuning, and robust endpoint deployment.</p>
-                        <p style="color: var(--text-secondary); margin-bottom: 30px;">Maintain the competitive edge by implementing AI solutions strategically customized to align with your organization's mission and compliance requirements.</p>
-                        <a href="Contact%20us.html" class="btn btn-primary" style="align-self: flex-start;">Start an AI Strategy Session</a>
+        <!-- Industries We Transform with AI -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Industries We Transform with AI</h2>
+                    <p>Sector-specific AI solutions built on deep domain knowledge.</p>
+                </div>
+                <div class="grid-3" style="gap: 20px;">
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-building-columns" style="font-size: 22px; color: var(--accent-purple); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">BFSI</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Fraud detection, credit risk scoring, regulatory reporting automation, and AI-powered KYC/AML compliance.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-heart-pulse" style="font-size: 22px; color: var(--accent-pink); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Healthcare & Pharma</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Clinical document intelligence, diagnostic AI support, drug discovery data pipelines, and patient data management.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-city" style="font-size: 22px; color: var(--accent-cyan); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Large Corporates</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Enterprise-wide automation, executive BI dashboards, HR AI tools, and supply chain optimisation.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-landmark-flag" style="font-size: 22px; color: var(--accent-purple); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Government & Public Sector</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Citizen service automation, smart governance platforms, policy analysis AI, and compliance monitoring systems.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-arrow-trend-up" style="font-size: 22px; color: var(--accent-pink); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">FinTech & Start-Ups</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Rapid AI product development, automated customer onboarding, churn prediction, and growth analytics.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-industry" style="font-size: 22px; color: var(--accent-cyan); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">MSMEs</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Affordable AI tools to automate operations, improve customer experience, and compete with larger enterprises.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why JCKCA for AI Enablement -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why JCKCA for AI Enablement?</h2>
+                    <p>Deep domain expertise meets cutting-edge AI capabilities.</p>
+                </div>
+                <div class="grid-2" style="gap: 24px;">
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-purple);"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Regulatory DNA</h3>
+                                <p style="font-size: 14px;">Built on 10+ years of compliance advisory, our AI solutions are designed from day one to align with DPDP, RBI, SEBI, GDPR, and sectoral data regulations — not bolted on as an afterthought.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-cyan);"><i class="fa-solid fa-microscope"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Business-First Approach</h3>
+                                <p style="font-size: 14px;">We focus on real outcomes — cost savings, revenue growth, and operational efficiency — not just technology for technology's sake. Every AI initiative is justified by a clear business case.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-pink);"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Security-Grade AI</h3>
+                                <p style="font-size: 14px;">AI systems built by a cybersecurity-first organisation. Your data never leaves your approved environments — we enforce data sovereignty, access controls, and model security at every layer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-purple);"><i class="fa-solid fa-handshake"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">End-to-End Partnership</h3>
+                                <p style="font-size: 14px;">From strategy to deployment and beyond — we are a long-term partner, not a one-off vendor. We grow with your AI journey, continuously optimising and expanding what AI does for your business.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-cyan);"><i class="fa-solid fa-gauge-high"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Rapid Time to Value</h3>
+                                <p style="font-size: 14px;">Our sprint-based AI delivery model means you see measurable results within weeks, not months. We prioritise high-impact, quick-win use cases to demonstrate ROI early in the engagement.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-pink);"><i class="fa-solid fa-users-between-lines"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Change Management Support</h3>
+                                <p style="font-size: 14px;">AI adoption fails when people aren't brought along. We invest in your team's AI literacy, provide hands-on training, and run structured change programmes to maximise adoption rates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What AI Enablement Delivers -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What AI Enablement Delivers</h2>
+                    <p>Real, measurable outcomes for your business.</p>
+                </div>
+                <div class="grid-4">
+                    <div class="stat-card">
+                        <div class="stat-num text-gradient">Up to 80%</div>
+                        <p style="color: var(--text-primary); font-weight: 600; font-size: 15px;">Reduction in manual processing time</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num text-gradient-alt">Up to 60%</div>
+                        <p style="color: var(--text-primary); font-weight: 600; font-size: 15px;">Lower operational costs through automation</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num text-gradient">3X Faster</div>
+                        <p style="color: var(--text-primary); font-weight: 600; font-size: 15px;">Decision-making speed with real-time analytics</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num text-gradient-alt">5x ROI</div>
+                        <p style="color: var(--text-primary); font-weight: 600; font-size: 15px;">Average return on AI investment within 12 months</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section-padding" style="background: var(--bg-primary); text-align: center;">
+            <div class="container">
+                <div class="glass-panel" style="padding: 70px 40px; border-color: rgba(139,92,246,0.25); box-shadow: 0 0 60px rgba(139,92,246,0.05);">
+                    <span class="badge" style="background: rgba(139,92,246,0.1); color: var(--accent-purple); border-color: rgba(139,92,246,0.2); margin-bottom: 20px;">Begin Your AI Transformation</span>
+                    <h2 style="font-size: 40px; margin-bottom: 20px;">Ready to See What AI Can Do for Your Business?</h2>
+                    <p style="font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 40px;">Schedule a free AI Strategy Session with our team. We'll identify your top automation opportunities and show you exactly how AI can transform your operations in 90 days.</p>
+                    <div class="hero-btns" style="justify-content: center;">
+                        <a href="Contact%20us.html" class="btn btn-primary" style="background: var(--gradient-secondary);"><i class="fa-solid fa-rocket" style="margin-right: 8px;"></i>Book an AI Strategy Session</a>
+                        <a href="Contact%20us.html" class="btn btn-outline">Talk to an AI Expert</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="margin-top: 0">
+    <footer>
         <div class="container">
-            <div class="footer-bottom" style="border-top: none">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo" style="margin-bottom: 15px;">
+                        <i class="fa-solid fa-building-shield" style="color: var(--accent-cyan)"></i>
+                        <span style="font-size: 20px;">JC Kabra & Associates</span>
+                    </a>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 10px;">A legacy of trust, upgraded.</p>
+                    <p>JCKCA delivers Digital Forensics, AI Enablement, and Cybersecurity Audit services for enterprises across India.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="Digital%20Forensics.html">Digital Forensics</a></li>
+                        <li><a href="AI%20Enablement.html">AI Enablement</a></li>
+                        <li><a href="Cybersecurity%20Audit.html">Cybersecurity Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="Why%20Us.html">Why Us</a></li>
+                        <li><a href="Contact%20us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--accent-purple); width: 20px;"></i> <a href="mailto:connect@kolabix.com">connect@kolabix.com</a></li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--accent-purple); width: 20px;"></i> <a href="tel:+918004978020">+91 80049 78020</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 &copy; 2026 JC Kabra & Associates. All rights reserved.
             </div>
         </div>
