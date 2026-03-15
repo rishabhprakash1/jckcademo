@@ -3,9 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Audit - JCKCA Demo</title>
+    <title>Cybersecurity Audit - JC Kabra & Associates</title>
+    <meta name="description" content="JCKCA is a CERT-In empanelled cybersecurity audit firm offering penetration testing, IS audits, VAPT, and compliance audits for banks, NBFCs, and enterprises across India.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .process-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 28px 30px;
+            background: var(--bg-glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            margin-bottom: 16px;
+            transition: all var(--transition-normal);
+        }
+        .process-step:hover {
+            border-color: var(--accent-pink);
+            background: rgba(236, 72, 153, 0.02);
+        }
+        .process-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1;
+            min-width: 55px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.85;
+        }
+        .framework-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--glass-border);
+            font-size: 15px;
+        }
+        .framework-item:last-child { border-bottom: none; }
+        .framework-item i { color: var(--accent-pink); font-size: 16px; margin-top: 3px; flex-shrink: 0; }
+        .package-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            padding: 40px 30px;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+        }
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .package-card.featured {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.1);
+            position: relative;
+        }
+        .package-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 20px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .package-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--glass-border);
+            font-size: 14px;
+        }
+        .package-feature:last-of-type { border-bottom: none; }
+        .package-feature i { color: var(--accent-cyan); font-size: 14px; flex-shrink: 0; }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +96,6 @@
                 <i class="fa-solid fa-building-shield" style="color: var(--accent-cyan)"></i>
                 <span>JC Kabra & Associates</span>
             </a>
-            
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Digital_Forensics.html">Digital Forensics</a></li>
@@ -23,57 +104,409 @@
                 <li><a href="Why_Us.html">Why Us</a></li>
                 <li><a href="Contact_Us.html">Contact Us</a></li>
             </ul>
-            
             <a href="Contact_Us.html" class="btn btn-primary">Book a Consultation</a>
         </div>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 60vh; padding: 150px 0 50px;">
-            <div class="container hero-grid" style="grid-template-columns: 1fr; text-align: center;">
-                <div class="hero-content">
-                    <span class="badge">Enterprise Protection</span>
-                    <h1>Cybersecurity <span class="text-gradient">Audit</span></h1>
-                    <p style="margin: 0 auto 40px;">Proactively identify system vulnerabilities, measure cybersecurity posture, and deploy zero-trust architectures to defend against malicious actors.</p>
+        <!-- Hero -->
+        <section class="hero" style="min-height: 70vh; padding: 160px 0 80px; text-align: center;">
+            <div class="container" style="max-width: 900px;">
+                <span class="badge" style="background: rgba(236,72,153,0.1); color: var(--accent-pink); border-color: rgba(236,72,153,0.2);">CERT-In Empanelled | RBI & SEBI Aligned</span>
+                <h1 style="font-size: 56px; margin-top: 16px; margin-bottom: 24px;">
+                    India's Regulatory-Grade<br>
+                    Cybersecurity Audits —<br>
+                    <span class="text-gradient">Backed by Government-Recognised Expertise.</span>
+                </h1>
+                <p style="font-size: 18px; color: var(--text-secondary); max-width: 720px; margin: 0 auto 20px;">
+                    JCKCA delivers rigorous, legally-defensible cybersecurity audits tailored to RBI, SEBI, IRDAI, and CERT-In mandates — helping Indian enterprises achieve compliance, identify vulnerabilities, and protect critical infrastructure.
+                </p>
+                <p style="font-size: 15px; color: var(--text-secondary); margin: 0 auto 40px;">
+                    Trusted by Banks, NBFCs, Payment Aggregators, Listed Companies & Government Bodies.
+                </p>
+                <div class="hero-btns" style="justify-content: center;">
+                    <a href="Contact_Us.html" class="btn btn-primary"><i class="fa-solid fa-shield-halved" style="margin-right: 8px;"></i>Request an Audit Proposal</a>
+                    <a href="#services" class="btn btn-outline">View Audit Services</a>
                 </div>
             </div>
         </section>
 
-        <section class="section-padding" style="background: var(--bg-secondary)">
+        <!-- The Regulatory Difference -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
             <div class="container">
-                <div class="grid-2">
-                    <div class="glass-panel" style="display: flex; flex-direction: column; justify-content: center;">
-                        <h2 style="font-size: 32px; margin-bottom: 20px;">Protect Your <span class="text-gradient-alt">Assets</span></h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 20px;">Modern enterprises require modern defenses. Let our expert ethical hackers and audit specialists map out your infrastructure to find weaknesses before adversaries do.</p>
-                        <p style="color: var(--text-secondary); margin-bottom: 30px;">From compliance assessments (ISO 27001, SOC 2, HIPAA) to dark web monitoring and red teaming, we ensure your networks are impenetrable.</p>
-                        <a href="Contact_Us.html" class="btn btn-primary" style="align-self: flex-start;">Request an Audit Proposal</a>
+                <div class="grid-2" style="gap: 60px; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 38px; margin-bottom: 24px;">The Regulatory Difference for <span class="text-gradient">Indian Businesses</span></h2>
+                        <p style="color: var(--text-secondary); font-size: 17px; margin-bottom: 20px;">
+                            Cybersecurity in India is no longer optional — it is a statutory obligation. Regulators including the RBI, SEBI, IRDAI, and CERT-In have issued binding cybersecurity frameworks that require periodic audits, vulnerability assessments, and incident reporting from regulated entities.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 17px; margin-bottom: 30px;">
+                            Non-compliance can lead to regulatory penalties, suspension of operations, reputational damage, and — in the event of a breach — significant legal liability. JCKCA's cybersecurity audit practice is purpose-built for this regulatory environment.
+                        </p>
+                        <div class="glass-panel" style="padding: 25px 30px; border-left: 3px solid var(--accent-pink);">
+                            <p style="font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0; line-height: 1.6;">&ldquo;We don't just find vulnerabilities — we deliver the remediation roadmap and compliance evidence your regulators require.&rdquo;</p>
+                        </div>
                     </div>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-server" style="font-size: 24px; color: var(--accent-cyan); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Penetration Testing</h3>
-                            <p style="font-size: 14px;">In-depth security testing of web applications, cloud infrastructure, and internal networks using advanced TTPs modeled after real threat actors.</p>
+                    <div class="glass-panel" style="padding: 0; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=2670&auto=format&fit=crop" alt="Cybersecurity" style="width: 100%; border-radius: 16px; display: block;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Cybersecurity Audit Services -->
+        <section id="services" class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Cybersecurity Audit Services</h2>
+                    <p>Comprehensive security assessments covering every layer of your digital infrastructure.</p>
+                </div>
+                <div class="grid-3" style="gap: 24px;">
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-bug"></i></div>
+                        <h3 style="font-size: 19px;">Vulnerability Assessment & Penetration Testing (VAPT)</h3>
+                        <p style="font-size: 14px;">Identify, exploit, and remediate security weaknesses across your networks, applications, cloud environments, and endpoints before attackers do.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-file-contract"></i></div>
+                        <h3 style="font-size: 19px;">IS Audit (Information Systems Audit)</h3>
+                        <p style="font-size: 14px;">Comprehensive review of IT controls, access management, data governance, and operational security aligned to RBI/SEBI IS Audit circulars for regulated entities.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <h3 style="font-size: 19px;">Cloud Security Assessment</h3>
+                        <p style="font-size: 14px;">Evaluate cloud configurations, identity management, data encryption, and compliance posture across AWS, Azure, and Google Cloud deployments.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3 style="font-size: 19px;">Web & Mobile Application Security Testing</h3>
+                        <p style="font-size: 14px;">OWASP Top 10 and beyond — thorough security testing of customer-facing web applications and mobile apps including API security review.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3 style="font-size: 19px;">Network Security Audit</h3>
+                        <p style="font-size: 14px;">Assess firewall rules, network segmentation, DMZ configurations, intrusion detection, and perimeter security across your full network architecture.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-user-slash"></i></div>
+                        <h3 style="font-size: 19px;">Red Team Operations</h3>
+                        <p style="font-size: 14px;">Full adversary simulation exercises that test your organisation's people, processes, and technology — providing a realistic picture of your true security posture.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-clipboard-list"></i></div>
+                        <h3 style="font-size: 19px;">ISO 27001 & SOC 2 Readiness</h3>
+                        <p style="font-size: 14px;">Gap analysis and implementation support to achieve ISO 27001 certification and SOC 2 Type I/II reports — opening doors to enterprise and international clients.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
+                        <h3 style="font-size: 19px;">Third-Party & Vendor Risk Assessment</h3>
+                        <p style="font-size: 14px;">Evaluate the security posture of your critical vendors and technology partners — ensuring your supply chain does not become your weakest link.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-shield-heart"></i></div>
+                        <h3 style="font-size: 19px;">Data Protection & DPDP Compliance Audit</h3>
+                        <p style="font-size: 14px;">Assess your data handling practices against India's Digital Personal Data Protection Act (DPDP) 2023 and international standards — minimising regulatory exposure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regulatory Frameworks -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Regulatory Frameworks We Audit Against</h2>
+                    <p>We speak the language of every Indian regulator and international standard body.</p>
+                </div>
+                <div class="grid-2" style="gap: 40px;">
+                    <div class="glass-panel" style="padding: 35px 40px;">
+                        <h3 style="font-size: 22px; margin-bottom: 20px; color: var(--accent-cyan);">Indian Regulatory Frameworks</h3>
+                        <div class="framework-item"><i class="fa-solid fa-check-circle"></i><div><strong>RBI Cybersecurity Framework</strong> — For banks, NBFCs, Urban Co-operative Banks, and PSOs</div></div>
+                        <div class="framework-item"><i class="fa-solid fa-check-circle"></i><div><strong>SEBI Cybersecurity & Cyber Resilience Framework</strong> — For listed companies and market intermediaries</div></div>
+                        <div class="framework-item"><i class="fa-solid fa-check-circle"></i><div><strong>CERT-In Guidelines</strong> — Mandatory incident reporting and IT infrastructure security standards</div></div>
+                        <div class="framework-item"><i class="fa-solid fa-check-circle"></i><div><strong>IRDAI Cybersecurity Guidelines</strong> — For insurance companies and intermediaries</div></div>
+                        <div class="framework-item"><i class="fa-solid fa-check-circle"></i><div><strong>DPDP Act 2023</strong> — India's Digital Personal Data Protection framework</div></div>
+                        <div class="framework-item"><i class="fa-solid fa-check-circle"></i><div><strong>IT Act 2000 & Amendments</strong> — Legal obligations for IT infrastructure and data</div></div>
+                    </div>
+                    <div class="glass-panel" style="padding: 35px 40px;">
+                        <h3 style="font-size: 22px; margin-bottom: 20px; color: var(--accent-purple);">International Standards</h3>
+                        <div class="framework-item" style="border-color: rgba(139,92,246,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--accent-purple);"></i><div><strong>ISO/IEC 27001:2022</strong> — Information Security Management System</div></div>
+                        <div class="framework-item" style="border-color: rgba(139,92,246,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--accent-purple);"></i><div><strong>SOC 2 Type I & II</strong> — System and Organisation Controls for service organisations</div></div>
+                        <div class="framework-item" style="border-color: rgba(139,92,246,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--accent-purple);"></i><div><strong>NIST Cybersecurity Framework</strong> — Identify, Protect, Detect, Respond, Recover</div></div>
+                        <div class="framework-item" style="border-color: rgba(139,92,246,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--accent-purple);"></i><div><strong>PCI-DSS</strong> — Payment Card Industry Data Security Standard</div></div>
+                        <div class="framework-item" style="border-color: rgba(139,92,246,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--accent-purple);"></i><div><strong>GDPR</strong> — For organisations processing EU personal data</div></div>
+                        <div class="framework-item" style="border-color: rgba(139,92,246,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--accent-purple);"></i><div><strong>OWASP Top 10 & SANS CWE</strong> — Application and software security standards</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Is Your Organisation Required to Be Audited? -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Is Your Organisation Required to Be Audited?</h2>
+                    <p>Regulatory mandates apply to a wide range of Indian enterprises. Check if you qualify.</p>
+                </div>
+                <div class="grid-2" style="gap: 30px;">
+                    <div class="feature-card" style="padding: 30px; border-left: 3px solid var(--accent-cyan);">
+                        <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--accent-cyan);"><i class="fa-solid fa-circle-exclamation" style="margin-right: 10px;"></i>Mandatory Audit Required</h3>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-cyan); margin-top: 4px;"></i>Scheduled Commercial Banks and Co-operative Banks</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-cyan); margin-top: 4px;"></i>NBFCs with asset size above ₹500 crore</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-cyan); margin-top: 4px;"></i>Payment Aggregators and Payment Gateways</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-cyan); margin-top: 4px;"></i>Listed Companies (SEBI CSCRF mandate)</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-cyan); margin-top: 4px;"></i>Insurance Firms under IRDAI supervision</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-cyan); margin-top: 4px;"></i>Critical Information Infrastructure operators</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card" style="padding: 30px; border-left: 3px solid var(--accent-purple);">
+                        <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--accent-purple);"><i class="fa-solid fa-thumbs-up" style="margin-right: 10px;"></i>Strongly Recommended</h3>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-purple); margin-top: 4px;"></i>FinTech startups handling customer financial data</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-purple); margin-top: 4px;"></i>Healthcare organisations and hospital networks</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-purple); margin-top: 4px;"></i>E-commerce platforms processing payments</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-purple); margin-top: 4px;"></i>IT & SaaS companies serving enterprise clients</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-purple); margin-top: 4px;"></i>Manufacturing firms with OT/SCADA infrastructure</li>
+                            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;"><i class="fa-solid fa-angle-right" style="color: var(--accent-purple); margin-top: 4px;"></i>Any organisation seeking ISO 27001 or SOC 2 certification</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 20px;">Not sure if your organisation is required to undergo a cybersecurity audit? Our team can assess your regulatory obligations in a 30-minute consultation.</p>
+                    <a href="Contact_Us.html" class="btn btn-primary">Check Your Audit Obligations</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Audit Process -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="grid-2" style="gap: 60px; align-items: start;">
+                    <div>
+                        <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                            <h2>Our Audit Process</h2>
+                            <p style="text-align: left;">A structured, transparent, and regulator-approved methodology at every stage.</p>
                         </div>
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-shield-halved" style="font-size: 24px; color: var(--accent-purple); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Security Architecture Review</h3>
-                            <p style="font-size: 14px;">Evaluate existing defenses to implement zero-trust frameworks, multifactor authentication standards, and endpoint detection response (EDR) solutions.</p>
+                        <div class="process-step">
+                            <div class="process-num">01</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Scope Definition & Planning</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We define the audit scope, identify in-scope assets and systems, agree on methodology, and obtain necessary permissions — ensuring a focused engagement with zero operational disruption.</p>
+                            </div>
                         </div>
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-file-contract" style="font-size: 24px; color: var(--accent-pink); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Compliance Readiness</h3>
-                            <p style="font-size: 14px;">Stay ahead of regulatory fines. We measure your posture against top industry frameworks and create a step-by-step roadmap to compliance.</p>
+                        <div class="process-step">
+                            <div class="process-num">02</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Reconnaissance & Information Gathering</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We systematically map your attack surface — gathering intelligence on network topology, exposed services, application architecture, and publicly discoverable information.</p>
+                            </div>
                         </div>
+                        <div class="process-step">
+                            <div class="process-num">03</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Vulnerability Assessment & Exploitation</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">Using automated scanning tools combined with manual expert analysis, we identify vulnerabilities, verify them through controlled exploitation, and assess their real-world business impact.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-num">04</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Reporting & Debrief</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">Detailed reports with executive summaries, technical findings, risk ratings (CVSS-scored), and prioritised remediation steps — suitable for board presentations and regulatory submission.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-num">05</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Remediation Support & Re-testing</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We guide your team through remediating findings and conduct formal re-testing to validate fixes — issuing a clean Letter of Attestation for regulatory or client submission.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: sticky; top: 100px;">
+                        <div class="glass-panel" style="border-color: rgba(236,72,153,0.25); padding: 40px; margin-bottom: 24px;">
+                            <div style="font-size: 48px; margin-bottom: 20px; color: var(--accent-pink);"><i class="fa-solid fa-certificate"></i></div>
+                            <h3 style="font-size: 24px; margin-bottom: 16px;">CERT-In Empanelled</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 24px;">JCKCA's audit reports are recognised by India's regulatory bodies — including RBI, SEBI, and CERT-In — as authoritative and compliant assessments.</p>
+                            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                                <div style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-pink);"></i> Regulator-accepted audit reports</div>
+                                <div style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-pink);"></i> Experienced in FSIL/RBI inspections</div>
+                                <div style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-pink);"></i> Board-level & technical reporting</div>
+                                <div style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-pink);"></i> Letter of Attestation included</div>
+                            </div>
+                        </div>
+                        <a href="Contact_Us.html" class="btn btn-primary" style="display: block; text-align: center;">Request an Audit Proposal</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose JCKCA -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose JCKCA for Your Cybersecurity Audit?</h2>
+                    <p>Compliance expertise meets technical depth.</p>
+                </div>
+                <div class="grid-2" style="gap: 24px;">
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-pink);"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Regulatory DNA, Not Just Tech</h3>
+                                <p style="font-size: 14px;">Unlike pure-play security firms, JCKCA brings a decade of regulatory advisory experience. Our findings are framed in the language regulators understand — making compliance a natural outcome.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-cyan);"><i class="fa-solid fa-users-gear"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Certified Security Professionals</h3>
+                                <p style="font-size: 14px;">Our team holds CISSP, CEH, OSCP, CISA, and CISM certifications. We bring the highest level of technical credibility to every engagement — from VAPT to board-level security reviews.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-purple);"><i class="fa-solid fa-lock"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Zero-Disruption Approach</h3>
+                                <p style="font-size: 14px;">We schedule all testing activities to minimise impact on your business operations — with dedicated safe windows, rollback procedures, and real-time communication throughout the audit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-pink);"><i class="fa-solid fa-file-shield"></i></div>
+                            <div>
+                                <h3 style="font-size: 19px; margin-bottom: 10px;">Actionable, Board-Ready Reports</h3>
+                                <p style="font-size: 14px;">Our deliverables include executive summaries for the board, technical reports for your IT team, and regulator-ready compliance certificates — designed to satisfy all audiences at once.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audit Packages -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Audit Packages</h2>
+                    <p>Flexible engagement models designed for every size of organisation.</p>
+                </div>
+                <div class="grid-3" style="gap: 30px; align-items: stretch;">
+                    <!-- Starter -->
+                    <div class="package-card">
+                        <div style="margin-bottom: 24px;">
+                            <div style="font-size: 13px; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Starter Audit</div>
+                            <h3 style="font-size: 26px; margin-bottom: 8px;">Essentials</h3>
+                            <p style="color: var(--text-secondary); font-size: 14px;">For MSMEs & early-stage start-ups seeking a first security baseline.</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> External Network VAPT</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Web Application Security Test</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Basic Security Policy Review</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Executive Summary Report</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Remediation Guidance</div>
+                        </div>
+                        <a href="Contact_Us.html" class="btn btn-outline" style="display: block; text-align: center; margin-top: 30px;">Get Started</a>
+                    </div>
+
+                    <!-- Professional (Featured) -->
+                    <div class="package-card featured">
+                        <div style="margin-bottom: 24px;">
+                            <div style="font-size: 13px; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Professional Audit</div>
+                            <h3 style="font-size: 26px; margin-bottom: 8px;">Compliance Ready</h3>
+                            <p style="color: var(--text-secondary); font-size: 14px;">For regulated entities — Banks, NBFCs, FinTechs, and listed companies.</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Full VAPT (Internal + External)</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Web & Mobile App Security Testing</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> IS Audit (RBI/SEBI aligned)</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Cloud Security Assessment</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Third-Party Risk Overview</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Board & Regulator Report</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Letter of Attestation</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Free Re-test (Critical Findings)</div>
+                        </div>
+                        <a href="Contact_Us.html" class="btn btn-primary" style="display: block; text-align: center; margin-top: 30px;">Request Proposal</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="package-card">
+                        <div style="margin-bottom: 24px;">
+                            <div style="font-size: 13px; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Enterprise Audit</div>
+                            <h3 style="font-size: 26px; margin-bottom: 8px;">Full Spectrum</h3>
+                            <p style="color: var(--text-secondary); font-size: 14px;">For large enterprises, critical infrastructure, and ISO 27001 certification readiness.</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Everything in Professional</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Red Team Simulation</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Social Engineering & Phishing Tests</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> ISO 27001 / SOC 2 Gap Analysis</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Full Vendor & Supply Chain Risk</div>
+                            <div class="package-feature"><i class="fa-solid fa-check"></i> Quarterly Retainer Option</div>
+                        </div>
+                        <a href="Contact_Us.html" class="btn btn-outline" style="display: block; text-align: center; margin-top: 30px;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section-padding" style="background: var(--bg-primary); text-align: center;">
+            <div class="container">
+                <div class="glass-panel" style="padding: 70px 40px; border-color: rgba(236,72,153,0.2); box-shadow: 0 0 60px rgba(236,72,153,0.05);">
+                    <span class="badge" style="background: rgba(236,72,153,0.1); color: var(--accent-pink); border-color: rgba(236,72,153,0.2); margin-bottom: 20px;">Act Before Regulators Do</span>
+                    <h2 style="font-size: 40px; margin-bottom: 20px;">Don't Let a Regulatory Gap<br>Become a Business Risk.</h2>
+                    <p style="font-size: 18px; color: var(--text-secondary); max-width: 720px; margin: 0 auto 40px;">Regulators are ramping up enforcement. A missed audit deadline or a regulatory finding can result in penalties, operational restrictions, and reputational damage. Act proactively — engage JCKCA today.</p>
+                    <div class="hero-btns" style="justify-content: center;">
+                        <a href="Contact_Us.html" class="btn btn-primary"><i class="fa-solid fa-shield-halved" style="margin-right: 8px;"></i>Request an Audit Proposal</a>
+                        <a href="Contact_Us.html" class="btn btn-outline">Speak to a Security Expert</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="margin-top: 0">
+    <footer>
         <div class="container">
-            <div class="footer-bottom" style="border-top: none">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo" style="margin-bottom: 15px;">
+                        <i class="fa-solid fa-building-shield" style="color: var(--accent-cyan)"></i>
+                        <span style="font-size: 20px;">JC Kabra & Associates</span>
+                    </a>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 10px;">A legacy of trust, upgraded.</p>
+                    <p>JCKCA delivers Digital Forensics, AI Enablement, and Cybersecurity Audit services for enterprises across India.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="Digital_Forensics.html">Digital Forensics</a></li>
+                        <li><a href="AI_Enablement.html">AI Enablement</a></li>
+                        <li><a href="Cybersecurity_Audit.html">Cybersecurity Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="Why_Us.html">Why Us</a></li>
+                        <li><a href="Contact_Us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--accent-pink); width: 20px;"></i> <a href="mailto:connect@kolabix.com">connect@kolabix.com</a></li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--accent-pink); width: 20px;"></i> <a href="tel:+918004978020">+91 80049 78020</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 &copy; 2026 JC Kabra & Associates. All rights reserved.
             </div>
         </div>
