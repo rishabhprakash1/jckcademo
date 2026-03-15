@@ -303,6 +303,12 @@ header {
   gap: 30px;
 }
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -457,6 +463,10 @@ footer {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -468,7 +478,7 @@ footer {
     font-size: 48px;
   }
   
-  .grid-3, .grid-2 {
+  .grid-3, .grid-4, .grid-2 {
     grid-template-columns: 1fr;
   }
   
