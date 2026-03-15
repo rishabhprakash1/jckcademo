@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Forensics - JCKCA Demo</title>
+    <title>Digital Forensics - JC Kabra & Associates</title>
+    <meta name="description" content="JCKCA delivers expert digital forensic investigations including media analysis, network forensics, incident response, and litigation support for enterprises.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .process-step {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 30px;
+            background: var(--bg-glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            margin-bottom: 16px;
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        .process-step:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 240, 255, 0.02);
+        }
+        .process-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1;
+            min-width: 60px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.8;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--glass-border);
+            font-size: 16px;
+        }
+        .checklist-item:last-child { border-bottom: none; }
+        .checklist-item i { color: var(--accent-cyan); font-size: 18px; width: 22px; flex-shrink: 0; }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +55,6 @@
                 <i class="fa-solid fa-building-shield" style="color: var(--accent-cyan)"></i>
                 <span>JC Kabra & Associates</span>
             </a>
-            
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Digital%20Forensics.html" class="active">Digital Forensics</a></li>
@@ -23,57 +63,354 @@
                 <li><a href="Why%20Us.html">Why Us</a></li>
                 <li><a href="Contact%20us.html">Contact Us</a></li>
             </ul>
-            
             <a href="Contact%20us.html" class="btn btn-primary">Book a Consultation</a>
         </div>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 60vh; padding: 150px 0 50px;">
-            <div class="container hero-grid" style="grid-template-columns: 1fr; text-align: center;">
+        <!-- Hero -->
+        <section class="hero" style="min-height: 65vh; padding: 160px 0 70px;">
+            <div class="container hero-grid">
                 <div class="hero-content">
-                    <span class="badge">Advanced Investigations</span>
-                    <h1>Digital <span class="text-gradient">Forensics</span></h1>
-                    <p style="margin: 0 auto 40px;">State-of-the-art investigative capabilities to recover, track, and analyze digital evidence across enterprise ecosystems.</p>
+                    <span class="badge">Digital Forensics & DFIR</span>
+                    <h1 style="font-size: 52px; margin-top: 15px;">
+                        Uncover the Truth.<br>
+                        Preserve the Evidence.<br>
+                        <span class="text-gradient">Deliver Justice.</span>
+                    </h1>
+                    <p style="font-size: 18px; margin-bottom: 40px; max-width: 540px;">
+                        JCKCA delivers enterprise-grade digital forensic investigations — legally sound, technically precise, and built around your compliance needs.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="Contact%20us.html" class="btn btn-primary"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i>Talk to an Investigator</a>
+                        <a href="#services" class="btn btn-outline">View Our Services</a>
+                    </div>
+                </div>
+                <div class="glass-panel" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?q=80&w=2673&auto=format&fit=crop" alt="Digital Forensics Investigation" style="width: 100%; border-radius: 16px; display: block;">
                 </div>
             </div>
         </section>
 
-        <section class="section-padding" style="background: var(--bg-secondary)">
+        <!-- What is Digital Forensics -->
+        <section class="section-padding" style="background: var(--bg-primary);">
             <div class="container">
-                <div class="grid-2">
-                    <div class="glass-panel" style="display: flex; flex-direction: column; justify-content: center;">
-                        <h2 style="font-size: 32px; margin-bottom: 20px;">Uncover the <span class="text-gradient-alt">Truth</span></h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 20px;">When a cyber incident occurs, knowing exactly what happened, how it happened, and what data was involved is paramount. Our modern Digital Forensics unit utilizes cutting-edge methodologies to provide clear, actionable intelligence.</p>
-                        <p style="color: var(--text-secondary); margin-bottom: 30px;">From intellectual property theft to insider threat investigations, our certified computer examiners recover vital information while maintaining strict chain-of-custody protocols.</p>
-                        <a href="Contact%20us.html" class="btn btn-primary" style="align-self: flex-start;">Talk to an Investigator</a>
+                <div class="section-header" style="margin-bottom: 40px;">
+                    <h2>What is Digital Forensics?</h2>
+                </div>
+                <div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 18px; color: var(--text-secondary);">
+                    <p style="margin-bottom: 20px;">Digital Forensics is the science of recovering, analysing, and presenting data found on digital devices that may be used in a court of law or for corporate investigations. When a cyber incident occurs — be it a data breach, employee misconduct, or a ransomware attack — understanding <em>what happened</em>, <em>how it happened</em>, and <em>what data was compromised</em> is mission-critical.</p>
+                    <p style="margin-bottom: 40px;">JCKCA's Forensics practice is led by certified examiners using cutting-edge tools and internationally recognized methodologies. We ensure chain-of-custody compliance so that our findings are always admissible and defensible.</p>
+                    <div class="glass-panel" style="padding: 30px; border-color: var(--accent-cyan); box-shadow: 0 4px 20px rgba(0, 240, 255, 0.1);">
+                        <p style="font-weight: 600; font-size: 20px; color: var(--text-primary); margin: 0; line-height: 1.5;">&ldquo;Every digital device tells a story. Our job is to read it — with precision, legality, and urgency.&rdquo;</p>
                     </div>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-hard-drive" style="font-size: 24px; color: var(--accent-cyan); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Media Analysis & Recovery</h3>
-                            <p style="font-size: 14px;">Retrieve deleted files and analyze fragmented data spanning mobile devices, IoT, and encrypted cloud storage.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Digital Forensics Services -->
+        <section id="services" class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Digital Forensics Services</h2>
+                    <p>Forensic capabilities built for enterprise needs across every sector.</p>
+                </div>
+                <div class="grid-3" style="gap: 24px;">
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-hard-drive"></i></div>
+                        <h3 style="font-size: 20px;">Media Analysis & Data Recovery</h3>
+                        <p style="font-size: 14px;">Recover deleted, encrypted, or fragmented files from hard drives, SSDs, USB drives, mobile devices, and cloud storage. Full chain-of-custody documentation.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3 style="font-size: 20px;">Network Forensics & Packet Analysis</h3>
+                        <p style="font-size: 14px;">Reconstruct network traffic, identify intrusion pathways, and trace unauthorized access or data exfiltration events across enterprise networks.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <h3 style="font-size: 20px;">Mobile Device Forensics</h3>
+                        <p style="font-size: 14px;">Extract and analyse data from smartphones, tablets, and IoT devices including deleted messages, call records, app data, and location history.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+                        <h3 style="font-size: 20px;">Cloud & SaaS Forensics</h3>
+                        <p style="font-size: 14px;">Investigate cloud-based incidents across Google Workspace, Microsoft 365, AWS, and Azure environments — including access logs, sharing events, and mailbox data.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3 style="font-size: 20px;">Malware & Ransomware Analysis</h3>
+                        <p style="font-size: 14px;">Analyse malware behavior and attack vectors, determine the blast radius of ransomware events, and provide precise remediation guidance.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3 style="font-size: 20px;">Litigation Support & Expert Testimony</h3>
+                        <p style="font-size: 14px;">Court-ready reports with legally admissible findings. Our certified examiners provide expert witness testimony to support complex legal matters.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-user-secret"></i></div>
+                        <h3 style="font-size: 20px;">Insider Threat Investigations</h3>
+                        <p style="font-size: 14px;">Investigate data theft, IP violations, unauthorized access, or policy breaches by employees with full privacy-compliant methodologies.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-purple);"><i class="fa-solid fa-shield-virus"></i></div>
+                        <h3 style="font-size: 20px;">Incident Response (DFIR)</h3>
+                        <p style="font-size: 14px;">Rapid response to active cyber incidents. We contain breaches, preserve evidence, eradicate threats, and restore operations — minimising your downtime.</p>
+                    </div>
+                    <div class="feature-card" style="padding: 30px 25px;">
+                        <div class="feature-icon" style="color: var(--accent-pink);"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3 style="font-size: 20px;">Cyber Crime Expert Reporting</h3>
+                        <p style="font-size: 14px;">Prepare detailed expert reports for regulatory bodies, law enforcement, and internal compliance teams with traceable forensic methodology documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forensic Investigation Process -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="grid-2" style="gap: 60px; align-items: start;">
+                    <div>
+                        <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                            <h2>Our Forensic Investigation Process</h2>
+                            <p style="text-align: left;">A structured, rigorous, and court-defensible methodology every time.</p>
                         </div>
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-network-wired" style="font-size: 24px; color: var(--accent-purple); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Network Packet Intelligence</h3>
-                            <p style="font-size: 14px;">Reconstruct network traffic to trace unauthorized intrusions and exfiltrated enterprise data.</p>
+
+                        <div class="process-step">
+                            <div class="process-num">01</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Initial Triage & Evidence Preservation</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We immediately preserve all relevant digital evidence using write-blockers and cryptographic hashing (MD5/SHA-256) to ensure integrity and chain-of-custody compliance.</p>
+                            </div>
                         </div>
-                        <div class="feature-card" style="padding: 25px;">
-                            <i class="fa-solid fa-scale-balanced" style="font-size: 24px; color: var(--accent-pink); margin-bottom: 10px;"></i>
-                            <h3 style="font-size: 20px;">Litigation Support</h3>
-                            <p style="font-size: 14px;">Court-ready documentation and expert witness testimony designed to support complex legal challenges.</p>
+                        <div class="process-step">
+                            <div class="process-num">02</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Deep Analysis</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">Using industry-leading tools (EnCase, FTK, Cellebrite, Volatility), our certified examiners conduct forensic analysis of acquired images to identify artifacts, timelines, and key evidence.</p>
+                            </div>
                         </div>
+                        <div class="process-step">
+                            <div class="process-num">03</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Timeline Reconstruction</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We build a full chronological digital timeline of the incident — mapping attacker actions, data access events, and system changes to reconstruct exactly what happened.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-num">04</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Reporting</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">We deliver comprehensive, plain-language forensic reports tailored for both technical and executive audiences, as well as court-ready documentation for legal proceedings.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-num">05</div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Post-Incident Support</h3>
+                                <p style="color: var(--text-secondary); font-size: 15px;">After the investigation, we provide remediation guidance, security recommendations, and — where needed — act as expert witnesses or assist with regulatory notifications.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar callout -->
+                    <div style="position: sticky; top: 100px;">
+                        <div class="glass-panel" style="border-color: rgba(0,240,255,0.2); padding: 40px;">
+                            <div style="font-size: 48px; margin-bottom: 20px; color: var(--accent-cyan);"><i class="fa-solid fa-clock"></i></div>
+                            <h3 style="font-size: 26px; margin-bottom: 16px;">Rapid Response Available</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 30px;">Cyber incidents are time-sensitive. Our DFIR team is on standby 24/7 to begin investigations within hours of an engagement.</p>
+                            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-cyan);"></i> 24/7 Incident Hotline</div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-cyan);"></i> On-site & Remote Investigation</div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-cyan);"></i> Neutral Expert Witness Services</div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--accent-cyan);"></i> Chain-of-Custody Guaranteed</div>
+                            </div>
+                            <a href="Contact%20us.html" class="btn btn-primary" style="display: block; text-align: center;">Report an Incident Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Needs Digital Forensics -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Who Needs Digital Forensics?</h2>
+                    <p>Our services serve a broad spectrum of organisations facing digital threats.</p>
+                </div>
+                <div class="grid-3" style="gap: 20px;">
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-building-columns" style="font-size: 22px; color: var(--accent-cyan); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Banks & Financial Institutions</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Investigate fraud, data exfiltration, and regulatory breaches under RBI/SEBI compliance guidelines.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-gavel" style="font-size: 22px; color: var(--accent-purple); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Law Firms & Legal Teams</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Obtain admissible digital evidence and expert testimony to support litigation, arbitration, or corporate disputes.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-city" style="font-size: 22px; color: var(--accent-pink); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Corporates & Enterprises</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Respond to insider threats, IP theft, e-mail compromise, and post-breach investigations.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-landmark-flag" style="font-size: 22px; color: var(--accent-cyan); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Government & Regulatory Bodies</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Support public-sector investigations with certified forensic expertise and legally rigorous documentation.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-heart-pulse" style="font-size: 22px; color: var(--accent-purple); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">Healthcare & Pharma</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Investigate patient data breaches, IP theft of clinical data, and regulatory compliance incidents.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="padding: 24px 28px; display: flex; align-items: flex-start; gap: 18px;">
+                        <i class="fa-solid fa-arrow-trend-up" style="font-size: 22px; color: var(--accent-pink); margin-top: 3px; flex-shrink: 0;"></i>
+                        <div>
+                            <h4 style="margin-bottom: 8px; font-size: 17px;">FinTechs & Start-Ups</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Address cyberattacks, fraud events, and data compromise at the speed growing digital businesses demand.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Trust JCKCA -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Trust JCKCA with Your Investigation?</h2>
+                    <p>Expertise, independence, and integrity — at every step.</p>
+                </div>
+                <div class="grid-2" style="gap: 24px;">
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-cyan);"><i class="fa-solid fa-certificate"></i></div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Certified Examiners</h3>
+                                <p style="font-size: 14px;">Our forensic team holds globally recognised certifications (CEH, CHFI, CFCE) and follows NIST SP 800-86 and ISO 27037 standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-purple);"><i class="fa-solid fa-lock"></i></div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">100% Legally Admissible</h3>
+                                <p style="font-size: 14px;">Our methodologies ensure every piece of evidence collected and analysed is strictly admissible — from chain-of-custody to courtroom presentation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-pink);"><i class="fa-solid fa-eye-slash"></i></div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">Complete Confidentiality</h3>
+                                <p style="font-size: 14px;">All investigations are conducted under strict NDAs. Your data, your incident, and your organisation's reputation are fully protected throughout.  </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 18px;">
+                            <div class="feature-icon" style="flex-shrink: 0; width: 50px; height: 50px; font-size: 20px; color: var(--accent-cyan);"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <h3 style="font-size: 20px; margin-bottom: 10px;">10+ Years Regulatory Expertise</h3>
+                                <p style="font-size: 14px;">Built on a decade of advisory excellence in regulatory, tax, and compliance matters — our investigations always connect digital findings to legal obligations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regulatory Standards -->
+        <section class="section-padding" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="grid-2" style="gap: 60px; align-items: center;">
+                    <div>
+                        <div style="text-align: left; margin-bottom: 30px;">
+                            <h2 style="font-size: 36px; margin-bottom: 16px;">Regulatory & Standards Alignment</h2>
+                            <p style="color: var(--text-secondary); font-size: 17px;">Our forensic engagements are always aligned with the regulatory frameworks and standards your organization is subject to.</p>
+                        </div>
+                        <div>
+                            <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> IT Act, 2000 & IT Amendment Act, 2008 (India)</div>
+                            <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> CERT-In Incident Reporting Guidelines</div>
+                            <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> Digital Personal Data Protection (DPDP) Act, 2023</div>
+                            <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> ISO/IEC 27037 — Digital Evidence Handling</div>
+                            <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> NIST SP 800-86 — Guide to Integrating Forensics</div>
+                            <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> RBI Cyber Security Framework for Banks</div>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="text-align: center; padding: 50px 40px;">
+                        <div style="font-size: 80px; margin-bottom: 20px;"><i class="fa-solid fa-shield-halved" style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i></div>
+                        <h3 style="font-size: 28px; margin-bottom: 16px;">CERT-In Empanelled</h3>
+                        <p style="color: var(--text-secondary);">JCKCA is aligned with CERT-In cybersecurity guidelines — India's nodal agency for cyber security incidents — ensuring your forensic response meets national compliance standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section-padding" style="background: var(--bg-primary); text-align: center;">
+            <div class="container">
+                <div class="glass-panel" style="padding: 70px 40px; border-color: rgba(0,240,255,0.2); box-shadow: 0 0 60px rgba(0,240,255,0.05);">
+                    <span class="badge" style="margin-bottom: 20px;">Time Is Critical</span>
+                    <h2 style="font-size: 40px; margin-bottom: 20px;">Suspect a Cyber Incident?<br>Don't Wait — Every Minute Counts.</h2>
+                    <p style="font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 40px;">The faster you engage forensics professionals, the more evidence can be preserved. Delays cost investigations — and in court, evidence matters immensely. Act now.</p>
+                    <div class="hero-btns" style="justify-content: center;">
+                        <a href="Contact%20us.html" class="btn btn-primary"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i>Report an Incident</a>
+                        <a href="Contact%20us.html" class="btn btn-outline">Talk to an Expert</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="margin-top: 0">
+    <footer>
         <div class="container">
-            <div class="footer-bottom" style="border-top: none">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo" style="margin-bottom: 15px;">
+                        <i class="fa-solid fa-building-shield" style="color: var(--accent-cyan)"></i>
+                        <span style="font-size: 20px;">JC Kabra & Associates</span>
+                    </a>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 10px;">A legacy of trust, upgraded.</p>
+                    <p>JCKCA delivers Digital Forensics, AI Enablement, and Cybersecurity Audit services for enterprises across India.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="Digital%20Forensics.html">Digital Forensics</a></li>
+                        <li><a href="AI%20Enablement.html">AI Enablement</a></li>
+                        <li><a href="Cybersecurity%20Audit.html">Cybersecurity Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="Why%20Us.html">Why Us</a></li>
+                        <li><a href="Contact%20us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--accent-cyan); width: 20px;"></i> <a href="mailto:connect@kolabix.com">connect@kolabix.com</a></li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--accent-cyan); width: 20px;"></i> <a href="tel:+918004978020">+91 80049 78020</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 &copy; 2026 JC Kabra & Associates. All rights reserved.
             </div>
         </div>
